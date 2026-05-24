@@ -1,8 +1,8 @@
+-- Keybinds configuration - SINGLE POINT OF ENTRY
+-- All base settings are below. Add your customizations in the CUSTOMIZATION ZONE at the end
+
 require("hyprland.lib")
 require("hyprland.variables")
-if is_file_exists(HOME .. "/.config/hypr/custom/variables.lua") then
-    require("custom.variables")
-end
 
 local qsScripts = "$HOME/.config/quickshell/$qsConfig/scripts"
 local hyprScripts = "$HOME/.config/hypr/hyprland/scripts"
@@ -357,3 +357,10 @@ hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(taskManager), { description = "
 --# Cursed stuff
 --## Make window not amogus large
 hl.bind("CTRL + SUPER + Backslash", hl.dsp.window.resize({ x = 640, y = 480, "exact" }))
+
+-- ============ CUSTOMIZATION ZONE ============
+-- Add your custom keybinds below
+-- Examples:
+-- hl.bind("SUPER + P", hl.dsp.exec_cmd("firefox"), { description = "Open Firefox" })
+-- hl.bind("SUPER + ALT + L", hl.dsp.exec_cmd("hyprlock"))
+

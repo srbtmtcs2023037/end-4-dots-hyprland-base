@@ -303,3 +303,10 @@ hl.config({
         force_zero_scaling = true
     }
 })
+
+-- ============ CUSTOMIZATION ZONE ============
+-- Add your custom general configurations below
+-- Examples:
+-- hl.config({ general = { gaps_in = 8 } })
+-- hl.animation({ leaf = "myCustomAnimation", enabled = true, speed = 5 })
+

@@ -56,7 +56,8 @@ ApplicationWindow {
     Process {
         id: translationProc
         property string locale: ""
-        command: [Directories.aiTranslationScriptPath, translationProc.locale]
+        // AI translation disabled
+        command: ["echo", ""]
     }
 
     ColumnLayout {
@@ -367,34 +368,6 @@ ApplicationWindow {
                                     {
                                         displayName: Translation.tr("Closet"),
                                         icon: "ev_shadow",
-                                        value: 2
-                                    }
-                                ]
-                            }
-                        }
-
-                        ContentSubsection {
-                            title: "AI"
-
-                            ConfigSelectionArray {
-                                currentValue: Config.options.policies.ai
-                                onSelected: newValue => {
-                                    Config.options.policies.ai = newValue;
-                                }
-                                options: [
-                                    {
-                                        displayName: Translation.tr("No"),
-                                        icon: "close",
-                                        value: 0
-                                    },
-                                    {
-                                        displayName: Translation.tr("Yes"),
-                                        icon: "check",
-                                        value: 1
-                                    },
-                                    {
-                                        displayName: Translation.tr("Local only"),
-                                        icon: "sync_saved_locally",
                                         value: 2
                                     }
                                 ]

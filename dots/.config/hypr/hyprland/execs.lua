@@ -1,10 +1,13 @@
+-- Startup execution commands - SINGLE POINT OF ENTRY
+-- All base settings are below. Add your customizations in the CUSTOMIZATION ZONE at the end
+
 -- put former exec-once commands inside the func and former exec commands outside
 hl.on("hyprland.start", function ()
 
     -- Bar, wallpaper
     hl.exec_cmd("$HOME/.config/hypr/hyprland/scripts/start_geoclue_agent.sh")
     hl.exec_cmd("qs -c $qsConfig")
-    hl.exec_cmd("$HOME/.config/hypr/custom/scripts/__restore_video_wallpaper.sh")
+    hl.exec_cmd("$HOME/.config/hypr/hyprland/scripts/__restore_video_wallpaper.sh")
 
     -- Core components (authentication, lock screen, notification daemon)
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
@@ -22,4 +25,11 @@ hl.on("hyprland.start", function ()
 
     -- Cursor
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
+
+    -- ============ CUSTOMIZATION ZONE ============
+    -- Add your custom startup commands below
+    -- Examples:
+    -- hl.exec_cmd("my_app &")
+    -- hl.exec_cmd("systemctl --user start my_service")
+
 end)
