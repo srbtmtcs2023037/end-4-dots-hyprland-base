@@ -72,7 +72,7 @@ Item {
         watchChanges: true
         onFileChanged: reload()
         onLoaded: {
-            root.setClockPreset(categoryFileView.text().trim())
+            // AI-based wallpaper categorization disabled
         }
     }
 
