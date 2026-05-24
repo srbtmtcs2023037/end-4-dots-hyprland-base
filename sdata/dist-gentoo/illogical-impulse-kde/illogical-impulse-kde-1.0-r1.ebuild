@@ -18,6 +18,6 @@ RDEPEND="
 	net-misc/networkmanager
 	kde-plasma/plasma-nm
 	kde-plasma/polkit-kde-agent
-	kde-apps/dolphin
+	gnome-base/nautilus
 	kde-plasma/systemsettings
 "

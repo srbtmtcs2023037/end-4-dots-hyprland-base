@@ -98,7 +98,7 @@ packages = [
   "NetworkManager",
   "plasma-nm",
   "polkit-kde",
-  "dolphin",
+  "nautilus",
   "plasma-systemsettings"
 ]
 

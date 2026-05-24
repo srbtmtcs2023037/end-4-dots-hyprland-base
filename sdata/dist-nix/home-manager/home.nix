@@ -119,7 +119,7 @@ quickshell, home_attrs, ... }:
       networkmanager #networkmanager
       kdePackages.plasma-nm #plasma-nm
       #polkit-kde-agent (TODO: Install via system PM instead; should install via nix in future when authentication problem fixed)
-      kdePackages.dolphin #dolphin
+      nautilus #nautilus
       kdePackages.systemsettings #systemsettings
 
       
