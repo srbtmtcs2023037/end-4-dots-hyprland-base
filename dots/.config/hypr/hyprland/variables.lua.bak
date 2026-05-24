@@ -1,5 +1,5 @@
--- Default variables - SINGLE POINT OF ENTRY
--- All base settings are below. Add your customizations in the CUSTOMIZATION ZONE at the end
+-- Default variables
+-- Copy these to ~/.config/hypr/custom/variables.lua to make changes in a dotfiles-update-friendly manner
 
 -- The folder within ~/.config/quickshell containing the config
 hl.env("qsConfig", "ii")
@@ -17,9 +17,3 @@ settingsApp = "XDG_CURRENT_DESKTOP=gnome ~/.config/hypr/hyprland/scripts/launch_
 taskManager = "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'gnome-system-monitor' 'plasma-systemmonitor --page-name Processes' 'command -v btop && kitty -1 fish -c btop'"
 
 workspaceGroupSize = 10
-
--- ============ CUSTOMIZATION ZONE ============
--- Add your custom variables below
--- Example:
--- terminal = "kitty"
--- browser = "firefox"

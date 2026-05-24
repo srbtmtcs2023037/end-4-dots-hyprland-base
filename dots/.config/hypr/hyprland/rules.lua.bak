@@ -167,10 +167,3 @@ hl.layer_rule({ match = { namespace = "quickshell:wTaskView" }, no_anim = true})
 
 -- Launchers need to be FAST
 hl.layer_rule({ match = { namespace = "gtk4-layer-shell" }, no_anim = true})
-
--- ============ CUSTOMIZATION ZONE ============
--- Add your custom window rules below
--- Examples:
--- hl.window_rule({ match = { class = "firefox" }, float = false, size = {"(monitor_w*0.8)", "(monitor_h*0.8)"} })
--- hl.window_rule({ match = { title = ".*Task.*" }, workspace = 5 })
-
