@@ -56,7 +56,8 @@ ApplicationWindow {
     Process {
         id: translationProc
         property string locale: ""
-        command: [Directories.aiTranslationScriptPath, translationProc.locale]
+        // AI translation disabled
+        command: ["echo", ""]
     }
 
     ColumnLayout {
