@@ -21,7 +21,8 @@ remove_deprecated_dependencies(){
   list+=(matugen-bin)
   for i in ${list[@]};do try sudo pacman --noconfirm -Rdd $i;done
 }
-# NOTE: `implicitize_old_dependencies()` was for the old days when we just switch from dependencies.conf to local PKGBUILDs.
+# NOTE: `implicitize_old_dependencies()` is kept as historical migration logic from
+# the old dependencies.conf flow to local PKGBUILDs.
 implicitize_old_dependencies(){
 # Convert old dependencies to non explicit dependencies so that they can be orphaned if not in meta packages
   remove_bashcomments_emptylines ./sdata/dist-arch/previous_dependencies.conf ./cache/old_deps_stripped.conf
