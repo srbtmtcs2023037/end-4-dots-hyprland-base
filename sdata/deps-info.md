@@ -115,7 +115,7 @@ Tips:
   - Provide command `kcmshell6 kcm_networkmanagement` used by Quickshell network functionality.
 - `polkit-kde-agent`
   - Basic component.
-- `dolphin`
+- `nautilus`
   - Used in Hyprland and Quickshell config.
 - `systemsettings`
   - Used in Hyprland `keybinds.conf`.

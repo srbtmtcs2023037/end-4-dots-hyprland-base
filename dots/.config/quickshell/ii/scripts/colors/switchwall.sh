@@ -101,9 +101,9 @@ check_and_prompt_upscale() {
 }
 
 CUSTOM_DIR="$XDG_CONFIG_HOME/hypr/custom"
-RESTORE_SCRIPT_DIR="$CUSTOM_DIR/scripts"
-RESTORE_SCRIPT="$RESTORE_SCRIPT_DIR/__restore_video_wallpaper.sh"
-THUMBNAIL_DIR="$RESTORE_SCRIPT_DIR/mpvpaper_thumbnails"
+# RESTORE_SCRIPT_DIR="$CUSTOM_DIR/scripts"  # Disabled: custom config system removed
+# RESTORE_SCRIPT="$RESTORE_SCRIPT_DIR/__restore_video_wallpaper.sh"  # Disabled: custom config system removed
+THUMBNAIL_DIR="$CUSTOM_DIR/thumbnails"  # Using main config dir for thumbnails
 VIDEO_OPTS="no-audio loop hwdec=auto scale=bilinear interpolation=no video-sync=display-resample panscan=1.0 video-scale-x=1.0 video-scale-y=1.0 video-align-x=0.5 video-align-y=0.5 load-scripts=no"
 
 is_video() {
@@ -232,10 +232,10 @@ switch() {
             if [ -f "$thumbnail" ]; then
                 matugen_args+=(image "$thumbnail")
                 generate_colors_material_args=(--path "$thumbnail")
-                create_restore_script "$video_path"
+                # create_restore_script "$video_path"  # Disabled: custom config system removed
             else
                 echo "Cannot create image to colorgen"
-                remove_restore
+                # remove_restore  # Disabled: custom config system removed
                 exit 1
             fi
         else
@@ -243,7 +243,7 @@ switch() {
             generate_colors_material_args=(--path "$imgpath")
             # Update wallpaper path in config
             set_wallpaper_path "$imgpath"
-            remove_restore
+            # remove_restore  # Disabled: custom config system removed
         fi
     fi
 
