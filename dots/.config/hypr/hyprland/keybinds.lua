@@ -291,7 +291,7 @@ for i = 1, 4 do
 end
 --## Special
 hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("special"), { description = "Workspace: Toggle scratchpad" })
-hl.bind("SUPER + mouse:275", hl.dsp.workspace.toggle_special("special"))
+-- hl.bind("SUPER + mouse:275", hl.dsp.workspace.toggle_special("special"))  -- Commented out to allow right-click context menus
 for i = 1, 4 do
     local key = { "BracketLeft", "BracketRight", "Up", "Down" }
     local prefix = { "-1", "+1", "r-5", "r+5" }
