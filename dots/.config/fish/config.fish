@@ -1,3 +1,9 @@
+# Auto start Hyprland on tty1
+if test -z "$DISPLAY" ;and test "$XDG_VTNR" -eq 1
+    mkdir -p ~/.cache
+    exec start-hyprland > ~/.cache/hyprland.log 2>&1
+end
+
 # Commands to run in interactive sessions can go here
 if status is-interactive
     # No greeting
@@ -11,7 +17,7 @@ if status is-interactive
         starship init fish | source
         enable_transience
     end
-    
+
     # Colors
     if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
         cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
