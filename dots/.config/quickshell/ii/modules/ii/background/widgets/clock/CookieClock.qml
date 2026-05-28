@@ -45,8 +45,25 @@ Item {
     }
 
     function setClockPreset(category) {
-        // AI-based wallpaper categorization disabled
-        return;
+        if (!Config.options.background.widgets.clock.cookie.aiStyling) return;
+        if (category === "") return;
+        print("[Cookie clock] Setting clock preset for category: " + category)
+        // "abstract", "anime", "city", "minimalist", "landscape", "plants", "person", "space"
+        if (category == "abstract") {
+            applyStyle(9, "none", "fill", "medium", "dot", "bubble")
+        } else if (category == "anime") {
+            applyStyle(7, "none", "fill", "bold", "dot", "bubble")
+        } else if (category == "city" || category == "space") {
+            applyStyle(23, "full", "hollow", "thin", "classic", "bubble")
+        } else if (category == "minimalist") {
+            applyStyle(6, "none", "fill", "bold", "dot", "hide")
+        } else if (category == "landscape") {
+            applyStyle(14, "full", "hollow", "medium", "classic", "bubble")
+        } else if (category == "plants") {
+            applyStyle(9, "dots", "fill", "bold", "dot", "border")
+        } else if (category == "person") {
+            applyStyle(14, "full", "classic", "classic", "classic", "rect")
+        }
     }
 
     FileView {
@@ -55,7 +72,7 @@ Item {
         watchChanges: true
         onFileChanged: reload()
         onLoaded: {
-            // AI-based wallpaper categorization disabled
+            root.setClockPreset(categoryFileView.text().trim())
         }
     }
 

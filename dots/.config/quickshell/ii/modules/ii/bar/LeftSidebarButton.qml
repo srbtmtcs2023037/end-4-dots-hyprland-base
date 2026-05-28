@@ -28,7 +28,6 @@ RippleButton {
         GlobalStates.sidebarLeftOpen = !GlobalStates.sidebarLeftOpen;
     }
 
-
     Connections {
         target: Booru
         function onResponseFinished() {

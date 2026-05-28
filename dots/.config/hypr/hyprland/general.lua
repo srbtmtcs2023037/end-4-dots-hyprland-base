@@ -47,8 +47,8 @@ hl.config({
     },
     general = {
         -- Gaps and border
-        gaps_in = 4,
-        gaps_out = 5,
+        gaps_in = 0,
+        gaps_out = 0,
         gaps_workspaces = 50,
 
         border_size = 1,
@@ -71,7 +71,7 @@ hl.config({
     decoration = {
         -- 2 = circle, higher = squircle, 4 = very obvious squircle
         -- Fuck clearly visible squircles. 100% Apple brainrot.
-        rounding_power = 2.5,
+        rounding_power = 0.5,
         rounding = 18,
 
         blur = {
@@ -94,7 +94,7 @@ hl.config({
         shadow = {
             enabled = true,
             range = 20,
-            offset = {0, 2},
+            offset = { 0, 2 },
             render_power = 10,
             color = "rgba(00000020)"
 
@@ -117,39 +117,39 @@ hl.config({
 -- Curves
 hl.curve("expressiveFastSpatial", {
     type = "bezier",
-    points = {{0.42, 1.67}, {0.21, 0.90}}
+    points = { { 0.42, 1.67 }, { 0.21, 0.90 } }
 })
 hl.curve("expressiveSlowSpatial", {
     type = "bezier",
-    points = {{0.39, 1.29}, {0.35, 0.98}}
+    points = { { 0.39, 1.29 }, { 0.35, 0.98 } }
 })
 hl.curve("expressiveDefaultSpatial", {
     type = "bezier",
-    points = {{0.38, 1.21}, {0.22, 1.00}}
+    points = { { 0.38, 1.21 }, { 0.22, 1.00 } }
 })
 hl.curve("emphasizedDecel", {
     type = "bezier",
-    points = {{0.05, 0.7}, {0.1, 1}}
+    points = { { 0.05, 0.7 }, { 0.1, 1 } }
 })
 hl.curve("emphasizedAccel", {
     type = "bezier",
-    points = {{0.3, 0}, {0.8, 0.15}}
+    points = { { 0.3, 0 }, { 0.8, 0.15 } }
 })
 hl.curve("standardDecel", {
     type = "bezier",
-    points = {{0, 0}, {0, 1}}
+    points = { { 0, 0 }, { 0, 1 } }
 })
 hl.curve("menu_decel", {
     type = "bezier",
-    points = {{0.1, 1}, {0, 1}}
+    points = { { 0.1, 1 }, { 0, 1 } }
 })
 hl.curve("menu_accel", {
     type = "bezier",
-    points = {{0.52, 0.03}, {0.72, 0.08}}
+    points = { { 0.52, 0.03 }, { 0.72, 0.08 } }
 })
 hl.curve("stall", {
     type = "bezier",
-    points = {{1, -0.1}, {0.7, 0.85}}
+    points = { { 1, -0.1 }, { 0.7, 0.85 } }
 })
 -- Configs
 -- windows
@@ -309,4 +309,3 @@ hl.config({
 -- Examples:
 -- hl.config({ general = { gaps_in = 8 } })
 -- hl.animation({ leaf = "myCustomAnimation", enabled = true, speed = 5 })
-

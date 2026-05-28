@@ -2,8 +2,7 @@
 -- All base settings are below. Add your customizations in the CUSTOMIZATION ZONE at the end
 
 -- put former exec-once commands inside the func and former exec commands outside
-hl.on("hyprland.start", function ()
-
+hl.on("hyprland.start", function()
     -- Bar, wallpaper
     hl.exec_cmd("qs -c $qsConfig")
 
@@ -18,16 +17,17 @@ hl.on("hyprland.start", function ()
 
     -- Clipboard: history
     --hl.exec_cmd("wl-paste --watch cliphist store")
-    hl.exec_cmd("wl-paste --type text --watch bash -c 'cliphist store && qs -c $qsConfig ipc call cliphistService update'")
-    hl.exec_cmd("wl-paste --type image --watch bash -c 'cliphist store && qs -c $qsConfig ipc call cliphistService update'")
+    hl.exec_cmd(
+    "wl-paste --type text --watch bash -c 'cliphist store && qs -c $qsConfig ipc call cliphistService update'")
+    hl.exec_cmd(
+    "wl-paste --type image --watch bash -c 'cliphist store && qs -c $qsConfig ipc call cliphistService update'")
 
     -- Cursor
-    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
+    --hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
 
     -- ============ CUSTOMIZATION ZONE ============
     -- Add your custom startup commands below
     -- Examples:
     -- hl.exec_cmd("my_app &")
     -- hl.exec_cmd("systemctl --user start my_service")
-
 end)
