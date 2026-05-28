@@ -469,11 +469,6 @@ Singleton {
                 property bool filterPassive: true
             }
 
-            property JsonObject musicRecognition: JsonObject {
-                property int timeout: 16
-                property int interval: 4
-            }
-
             property JsonObject search: JsonObject {
                 property int nonAppResultDelay: 30 // This prevents lagging when typing
                 property string engineBaseUrl: "https://www.google.com/search?q="
@@ -490,7 +485,6 @@ Singleton {
                     property string webSearch: "?"
                 }
                 property JsonObject imageSearch: JsonObject {
-                    property string imageSearchEngineBaseUrl: "https://lens.google.com/uploadbyurl?url="
                     property bool useCircleSelection: false
                 }
             }
@@ -622,7 +616,7 @@ Singleton {
                     property bool leftAlignApps: false
                 }
                 property JsonObject actionCenter: JsonObject {
-                    property list<string> toggles: [ "network", "bluetooth", "easyEffects", "powerProfile", "idleInhibitor", "nightLight", "darkMode", "antiFlashbang", "cloudflareWarp", "mic", "musicRecognition", "notifications", "onScreenKeyboard", "gameMode", "screenSnip", "colorPicker" ]
+                    property list<string> toggles: [ "network", "bluetooth", "easyEffects", "powerProfile", "idleInhibitor", "nightLight", "darkMode", "antiFlashbang", "cloudflareWarp", "mic", "notifications", "onScreenKeyboard", "gameMode", "screenSnip", "colorPicker" ]
                 }
                 property JsonObject calendar: JsonObject {
                     property bool force2CharDayOfWeek: true
