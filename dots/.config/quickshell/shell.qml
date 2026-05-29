@@ -35,12 +35,6 @@ ShellRoot {
 
     // Panel families
     property list<string> families: ["ii"]
-    function cyclePanelFamily() {
-       if (families.length <= 1) return; // No cycling with single family
-       const currentIndex = families.indexOf(Config.options.panelFamily)
-       const nextIndex = (currentIndex + 1) % families.length
-       Config.options.panelFamily = families[nextIndex]
-    }
 
     component PanelFamilyLoader: LazyLoader {
         required property string identifier
@@ -51,23 +45,6 @@ ShellRoot {
     PanelFamilyLoader {
         identifier: "ii"
         component: IllogicalImpulseFamily {}
-    }
-
-
-    // Shortcuts
-    IpcHandler {
-        target: "panelFamily"
-
-        function cycle(): void {
-            root.cyclePanelFamily()
-        }
-    }
-
-    GlobalShortcut {
-        name: "panelFamilyCycle"
-        description: "Cycles panel family"
-
-        onPressed: root.cyclePanelFamily()
     }
 }
 
