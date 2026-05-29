@@ -1,0 +1,5 @@
+module qs
+
+# Root shell components
+ReloadPopup 1.0 ReloadPopup.qml
+GlobalStates 1.0 GlobalStates.qml

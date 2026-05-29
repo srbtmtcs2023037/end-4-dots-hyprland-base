@@ -43,7 +43,7 @@ RegionSelector 1.0 regionSelector/RegionSelector.qml
 ScreenCorners 1.0 screenCorners/ScreenCorners.qml
 
 # Screen Translator module
-ScreenTranslator 1.0 screenTranslator/ScreenTextOverlay.qml
+ScreenTranslator 1.0 screenTranslator/ScreenTranslator.qml
 
 # Session Screen module
 SessionScreen 1.0 sessionScreen/SessionScreen.qml

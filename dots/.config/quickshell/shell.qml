@@ -6,15 +6,15 @@
 // Remove two slashes below and adjust the value to change the UI scale
 ////@ pragma Env QT_SCALE_FACTOR=1
 
-import "modules/common"
-import "services"
-import "panelFamilies"
-
 import QtQuick
 import QtQuick.Window
 import Quickshell
 import Quickshell.Io
 import Quickshell.Hyprland
+import qs
+import qs.modules.common
+import qs.services
+import qs.panelFamilies
 
 ShellRoot {
     id: root
