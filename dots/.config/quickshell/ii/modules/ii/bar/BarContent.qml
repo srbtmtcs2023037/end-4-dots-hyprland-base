@@ -16,8 +16,8 @@ Item { // Bar content region
     readonly property int centerSideModuleWidth: (useShortenedForm == 2) ? Appearance.sizes.barCenterSideModuleWidthHellaShortened : (useShortenedForm == 1) ? Appearance.sizes.barCenterSideModuleWidthShortened : Appearance.sizes.barCenterSideModuleWidth
 
     component VerticalBarSeparator: Rectangle {
-        Layout.topMargin: Appearance.sizes.baseBarHeight / 3
-        Layout.bottomMargin: Appearance.sizes.baseBarHeight / 3
+        Layout.topMargin: Appearance.sizes.baseBarHeight / 4
+        Layout.bottomMargin: Appearance.sizes.baseBarHeight / 4
         Layout.fillHeight: true
         implicitWidth: 1
         color: Appearance.colors.colOutlineVariant
