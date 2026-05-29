@@ -282,6 +282,9 @@ Singleton {
                 property JsonObject tooltips: JsonObject {
                     property bool clickToShow: false
                 }
+                property int customHeight: 40 // Bar height in pixels (30-50 recommended)
+                property bool darkMode: true // Darker background color
+                property bool sidebarClickOnly: true // Only open sidebars on explicit click
             }
 
             property JsonObject battery: JsonObject {

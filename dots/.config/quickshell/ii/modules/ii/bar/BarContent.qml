@@ -39,7 +39,11 @@ Item { // Bar content region
             fill: parent
             margins: Config.options.bar.cornerStyle === 1 ? (Appearance.sizes.hyprlandGapsOut) : 0 // idk why but +1 is needed
         }
-        color: Config.options.bar.showBackground ? Appearance.colors.colLayer0 : "transparent"
+        color: {
+            if (!Config.options.bar.showBackground) return "transparent";
+            if (Config.options.bar.darkMode) return "#0a0a0a"; // Pure black for dark mode
+            return Appearance.colors.colLayer0;
+        }
         radius: Config.options.bar.cornerStyle === 1 ? Appearance.rounding.windowRounding : 0
         border.width: Config.options.bar.cornerStyle === 1 ? 1 : 0
         border.color: Appearance.colors.colLayer0Border
@@ -58,7 +62,7 @@ Item { // Bar content region
         implicitHeight: Appearance.sizes.baseBarHeight
 
         onPressed: event => {
-            if (event.button === Qt.LeftButton)
+            if (!Config.options.bar.sidebarClickOnly && event.button === Qt.LeftButton)
                 GlobalStates.sidebarLeftOpen = !GlobalStates.sidebarLeftOpen;
         }
 
@@ -185,7 +189,7 @@ Item { // Bar content region
         implicitHeight: Appearance.sizes.baseBarHeight
 
         onPressed: event => {
-            if (event.button === Qt.LeftButton) {
+            if (!Config.options.bar.sidebarClickOnly && event.button === Qt.LeftButton) {
                 GlobalStates.sidebarRightOpen = !GlobalStates.sidebarRightOpen;
             }
         }

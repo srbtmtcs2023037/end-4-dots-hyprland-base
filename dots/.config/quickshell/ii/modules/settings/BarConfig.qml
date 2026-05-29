@@ -347,4 +347,41 @@ ContentPage {
             }
         }
     }
+
+    ContentSection {
+       icon: "straighten"
+       title: Translation.tr("Appearance")
+       ConfigSlider {
+           icon: "compress"
+           text: Translation.tr("Bar height")
+           value: Config.options.bar.customHeight
+           from: 30
+           to: 50
+           stepSize: 1
+           onValueChanged: {
+               Config.options.bar.customHeight = value;
+           }
+       }
+       ConfigSwitch {
+           buttonIcon: "dark_mode"
+           text: Translation.tr("Dark bar background")
+           checked: Config.options.bar.darkMode
+           onCheckedChanged: {
+               Config.options.bar.darkMode = checked;
+           }
+       }
+    }
+
+    ContentSection {
+       icon: "touch_app"
+       title: Translation.tr("Interactions")
+       ConfigSwitch {
+           buttonIcon: "ads_click"
+           text: Translation.tr("Sidebar click-only (no edge hover)")
+           checked: Config.options.bar.sidebarClickOnly
+           onCheckedChanged: {
+               Config.options.bar.sidebarClickOnly = checked;
+           }
+       }
+    }
 }
