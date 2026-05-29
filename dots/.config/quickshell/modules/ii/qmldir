@@ -1,0 +1,61 @@
+module qs.modules.ii
+
+# Bar module
+Bar 1.0 bar/Bar.qml
+
+# Background module
+Background 1.0 background/Background.qml
+
+# Cheatsheet module
+Cheatsheet 1.0 cheatsheet/Cheatsheet.qml
+
+# Dock module
+Dock 1.0 dock/Dock.qml
+
+# Lock module
+Lock 1.0 lock/Lock.qml
+
+# Media Controls module
+MediaControls 1.0 mediaControls/MediaControls.qml
+
+# Notification Popup module
+NotificationPopup 1.0 notificationPopup/NotificationPopup.qml
+
+# On Screen Display module
+OnScreenDisplay 1.0 onScreenDisplay/OnScreenDisplay.qml
+
+# On Screen Keyboard module
+OnScreenKeyboard 1.0 onScreenKeyboard/OnScreenKeyboard.qml
+
+# Overlay module
+Overlay 1.0 overlay/Overlay.qml
+
+# Overview module
+Overview 1.0 overview/Overview.qml
+
+# Polkit module
+Polkit 1.0 polkit/Polkit.qml
+
+# Region Selector module
+RegionSelector 1.0 regionSelector/RegionSelector.qml
+
+# Screen Corners module
+ScreenCorners 1.0 screenCorners/ScreenCorners.qml
+
+# Screen Translator module
+ScreenTranslator 1.0 screenTranslator/ScreenTranslator.qml
+
+# Session Screen module
+SessionScreen 1.0 sessionScreen/SessionScreen.qml
+
+# Sidebar Left module
+SidebarLeft 1.0 sidebarLeft/SidebarLeft.qml
+
+# Sidebar Right module
+SidebarRight 1.0 sidebarRight/SidebarRight.qml
+
+# Vertical Bar module
+VerticalBar 1.0 verticalBar/VerticalBar.qml
+
+# Wallpaper Selector module
+WallpaperSelector 1.0 wallpaperSelector/WallpaperSelector.qml
