@@ -1,0 +1,11 @@
+module qs.modules.common
+
+# Core configuration and state singletons
+Config 1.0 Config.qml
+Appearance 1.0 Appearance.qml
+Directories 1.0 Directories.qml
+Icons 1.0 Icons.qml
+Images 1.0 Images.qml
+Persistent 1.0 Persistent.qml
+
+# Sub-modules (directories with their own exports)

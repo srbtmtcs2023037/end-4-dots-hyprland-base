@@ -1,0 +1,5 @@
+module qs.panelFamilies
+
+# Panel families
+IllogicalImpulseFamily 1.0 IllogicalImpulseFamily.qml
+PanelLoader 1.0 PanelLoader.qml
