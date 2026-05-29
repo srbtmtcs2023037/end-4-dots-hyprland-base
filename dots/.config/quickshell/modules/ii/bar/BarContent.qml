@@ -23,29 +23,16 @@ Item { // Bar content region
         color: Appearance.colors.colOutlineVariant
     }
 
-    // Background shadow
-    Loader {
-        active: Config.options.bar.showBackground && Config.options.bar.cornerStyle === 1 && Config.options.bar.floatStyleShadow
-        anchors.fill: barBackground
-        sourceComponent: StyledRectangularShadow {
-            anchors.fill: undefined // The loader's anchors act on this, and this should not have any anchor
-            target: barBackground
-        }
-    }
-    // Background
+    // GNOME-style background: solid dark color, no shadow, no rounded corners
     Rectangle {
         id: barBackground
-        anchors {
-            fill: parent
-            margins: Config.options.bar.cornerStyle === 1 ? (Appearance.sizes.hyprlandGapsOut) : 0 // idk why but +1 is needed
-        }
-        color: Config.options.bar.showBackground ? Appearance.colors.colLayer0 : "transparent"
-        radius: Config.options.bar.cornerStyle === 1 ? Appearance.rounding.windowRounding : 0
-        border.width: Config.options.bar.cornerStyle === 1 ? 1 : 0
-        border.color: Appearance.colors.colLayer0Border
+        anchors.fill: parent
+        color: Appearance.colors.colLayer0
+        radius: 0
+        border.width: 0
     }
 
-    MouseArea { // Left side
+    MouseArea { // Left side - minimal style for GNOME
         id: barLeftSideMouseArea
 
         anchors {
@@ -70,13 +57,13 @@ Item { // Bar content region
             LeftSidebarButton { // Left sidebar button
                 id: leftSidebarButton
                 Layout.alignment: Qt.AlignVCenter
-                Layout.leftMargin: Appearance.rounding.screenRounding
+                Layout.leftMargin: 12
                 colBackground: barLeftSideMouseArea.hovered ? Appearance.colors.colLayer1Hover : ColorUtils.transparentize(Appearance.colors.colLayer1Hover, 1)
             }
 
             ActiveWindow {
-                Layout.leftMargin: 10 + (leftSidebarButton.visible ? 0 : Appearance.rounding.screenRounding)
-                Layout.rightMargin: Appearance.rounding.screenRounding
+                Layout.leftMargin: 8
+                Layout.rightMargin: 12
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 visible: root.useShortenedForm === 0
@@ -84,14 +71,14 @@ Item { // Bar content region
         }
     }
 
-    Row { // Middle section
+    Row { // Middle section - centered content, minimal spacing
         id: middleSection
         anchors {
             top: parent.top
             bottom: parent.bottom
             horizontalCenter: parent.horizontalCenter
         }
-        spacing: 4
+        spacing: 0
 
         BarGroup {
             id: leftCenterGroup
@@ -114,10 +101,6 @@ Item { // Bar content region
             }
         }
 
-        VerticalBarSeparator {
-            visible: Config.options?.bar.borderless
-        }
-
         BarGroup {
             id: middleCenterGroup
             anchors.verticalCenter: parent.verticalCenter
@@ -138,10 +121,6 @@ Item { // Bar content region
                     }
                 }
             }
-        }
-
-        VerticalBarSeparator {
-            visible: Config.options?.bar.borderless
         }
 
         MouseArea {
@@ -172,7 +151,7 @@ Item { // Bar content region
         }
     }
 
-    MouseArea { // Right side
+    MouseArea { // Right side - GNOME-style minimal indicators
         id: barRightSideMouseArea
 
         anchors {
@@ -193,18 +172,18 @@ Item { // Bar content region
         RowLayout {
             id: rightSectionRowLayout
             anchors.fill: parent
-            spacing: 5
+            spacing: 8
             layoutDirection: Qt.RightToLeft
 
-            RippleButton { // Right sidebar button
+            RippleButton { // Right sidebar button - simplified
                 id: rightSidebarButton
 
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                Layout.rightMargin: Appearance.rounding.screenRounding
+                Layout.rightMargin: 12
                 Layout.fillWidth: false
 
-                implicitWidth: indicatorsRowLayout.implicitWidth + 10 * 2
-                implicitHeight: indicatorsRowLayout.implicitHeight + 5 * 2
+                implicitWidth: indicatorsRowLayout.implicitWidth + 8
+                implicitHeight: indicatorsRowLayout.implicitHeight + 4
 
                 buttonRadius: Appearance.rounding.full
                 colBackground: barRightSideMouseArea.hovered ? Appearance.colors.colLayer1Hover : ColorUtils.transparentize(Appearance.colors.colLayer1Hover, 1)
@@ -227,7 +206,7 @@ Item { // Bar content region
                 RowLayout {
                     id: indicatorsRowLayout
                     anchors.centerIn: parent
-                    property real realSpacing: 15
+                    property real realSpacing: 12
                     spacing: 0
 
                     Revealer {
